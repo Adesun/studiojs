@@ -264,7 +264,7 @@ ir.Utils.parseUrl = function (url) {
 
 ir.Utils.changeServer = function (url, newServer) {
     var schemend = url.indexOf("://");
-    if (schemend < 0) return ir.Utils.joinPath(newServer,url);
+    if (schemend < 0) return ir.Utils.joinPaths(newServer,url);
     var nextSlash = url.indexOf('/', schemend + 3);
     if (nextSlash < 0) return newServer; //no path??
     return ir.Utils.joinPath(newServer, url.substring(nextSlash,url.length));
@@ -272,7 +272,7 @@ ir.Utils.changeServer = function (url, newServer) {
 }
 ir.Utils.joinPaths = function (base, relative) {
     if (base.charAt(base.length - 1) == '/') base = base.substr(0,base.length -1);
-    return base + ((relatve.charAt(0) != '/') ? '/' : '') + relative; 
+    return base + ((relative.charAt(0) != '/') ? '/' : '') + relative; 
 }
 
 ir.Utils.parseFlip = function (value) {
