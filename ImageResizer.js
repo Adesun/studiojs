@@ -267,7 +267,7 @@ ir.Utils.changeServer = function (url, newServer) {
     if (schemend < 0) return ir.Utils.joinPaths(newServer,url);
     var nextSlash = url.indexOf('/', schemend + 3);
     if (nextSlash < 0) return newServer; //no path??
-    return ir.Utils.joinPath(newServer, url.substring(nextSlash,url.length));
+    return ir.Utils.joinPaths(newServer, url.substring(nextSlash,url.length));
 
 }
 ir.Utils.joinPaths = function (base, relative) {
